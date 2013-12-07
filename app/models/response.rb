@@ -31,8 +31,7 @@ class Response < ActiveRecord::Base
    length = responses.length
    puts "length = #{length}"
    p responses
-   #prob'm here
-   unless length == 1 && responses[0].id == self.id
+   unless (length == 1 && responses[0].id == self.id) || length == 0
      errors[:response] << "has already answered question"
    end
  end
